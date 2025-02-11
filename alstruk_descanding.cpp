@@ -5,13 +5,18 @@
 void bubbleSort(int arr[], int n){
   int i, j, tmp;
   for(i = 0; i < n; i++){
+    printf("buble ke: %d \n", i + 1);
     for(j=0; j < n-i-1; j ++){
       if(arr[j] < arr[j+1]){
         tmp = arr[j];
         arr[j] = arr[j+1];
         arr[j+1] = tmp;
       }
+      for (int k = 0; k < n; k++){
+        printf("%d ", arr[k]);
+      }
     }
+    printf("\n");
   }
 }
 
