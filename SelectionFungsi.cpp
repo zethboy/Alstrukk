@@ -1,21 +1,21 @@
 #include <stdio.h>
 
-int selectionSort(int arr[], int n){
-  int i, j, posisi, swap;
-  for(i = 0; i < (n-1); i++){
-    posisi = i;
-    for (j = i + 1; j < n; j++){
-      if(arr[posisi] > arr[j]){
-        posisi = j;
-      }
-    }
-    if(posisi != i){
-      swap = arr[i];
-      arr[i] = arr[posisi];
-      arr[posisi] = swap;
-    }
-  }
-}
+// int selectionSort(int arr[], int n){
+//   int i, j, posisi, swap;
+//   for(i = 0; i < (n-1); i++){
+//     posisi = i;
+//     for (j = i + 1; j < n; j++){
+//       if(arr[posisi] > arr[j]){
+//         posisi = j;
+//       }
+//     }
+//     if(posisi != i){
+//       swap = arr[i];
+//       arr[i] = arr[posisi];
+//       arr[posisi] = swap;
+//     }
+//   }
+// }
 
 int main(){
   int array[100], n, i, j;

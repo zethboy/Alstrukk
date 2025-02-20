@@ -49,6 +49,11 @@ void merge(int arr[], int left, int mid, int right) {
         j++;
         k++;
     }
+    printf("Proses merge: ");
+    for (int x = left; x <= right; x++) {
+        printf("%d ", arr[x]);
+    }
+    printf("\n");
 }
 
 // Subarray yang akan diurutkan berada dalam rentang indeks [kiri-kanan]]
@@ -68,14 +73,25 @@ void mergeSort(int arr[], int left, int right) {
 }
 
 int main() {
-    int arr[] = { 12, 11, 13, 5, 6, 7 };
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int arr[100], i;
     
-      //panggil fungsi 
-    mergeSort(arr, 0, n - 1);
 
-    for (int i = 0; i < n; i++)
-        printf("%d ", arr[i]);
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("Masukkan banyaknya jumlah data: ");
+    scanf("%d", &n);
+  
+    printf("Masukkan data sebanyak %d :\n", n);
+    for(i = 0; i < n; i++){
+      scanf("%d", &arr[i]);
+    }
+    mergeSort(arr, 0, n - 1);
+  
+    printf("Hasil pengurutan sebagai berikut:\n");
+    for(i = 0; i < n; i++){
+      printf("%d ", arr[i]);
+    }
+    printf("\n");
+    
     return 0;
 }
 

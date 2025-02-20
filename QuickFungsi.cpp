@@ -7,7 +7,13 @@ void swap(int* a, int* b) {
 	*a = *b;
 	*b = temp;
 } 
-
+// Fungsi untuk mencetak array
+void printArray(int arr[], int size) {
+	for (int i = 0; i < size; i++) {
+			printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
 // Fungsi partisi untuk mengatur ulang array di sekitar pivot
 int partition(int arr[], int low, int high) {
 	
@@ -23,10 +29,11 @@ for (int j = low; j <= high - 1; j++) {
 		swap(&arr[i], &arr[j]);
 	
 	}
-
 }
-
 swap(&arr[i + 1], &arr[high]);
+ // Menampilkan hasil partisi
+ printf("Proses partisi: ");
+ printArray(arr, high + 1);
 return (i + 1);
 
 } 
@@ -34,16 +41,21 @@ return (i + 1);
 void quickSort(int arr[], int low, int high) {
 
 	if (low < high) {
-	
-	// Mempartisi array dan mendapatkan indeks pivot
-	int pi = partition(arr, low, high); 
-	
-// Urutkan elemen secara rekursif sebelum dan sesudah pivot
-	quickSort(arr, low, pi - 1);
-	
-	quickSort(arr, pi + 1, high);
-	
-	}
+		int pi = partition(arr, low, high);
+
+		printf("Kiri: ");
+		for (int i = low; i < pi; i++) {
+				printf("%d ", arr[i]);
+		}
+		printf("| Pivot: %d | Kanan: ", arr[pi]);
+		for (int i = pi + 1; i <= high; i++) {
+				printf("%d ", arr[i]);
+		}
+		printf("\n");
+
+		quickSort(arr, low, pi - 1);
+		quickSort(arr, pi + 1, high);
+}
 	
 	} 
 
@@ -53,22 +65,22 @@ void printArray(int arr[], int size) {
 	for (int i = 0; i < size; i++)
 	
 		printf("%d ", arr[i]);
-		printf("n");
+		printf("\n");
 
 } 
 
 int main() {
 
 int n;
-int arr[n];
+
 
 	printf("Masukan jumlah elemen: ");
 	scanf("%d", &n); 
-
+	int arr[n];
 	printf("Masukan angka: ");
 	
 	for (int i = 0; i < n; i++) {
-	
+		
 	scanf("%d", &arr[i]);
 	
 	} 

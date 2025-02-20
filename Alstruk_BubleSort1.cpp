@@ -2,14 +2,39 @@
 
 #include <stdio.h>
 
-void bubbleSort(int arr[], int n){
-  int i, j, tmp;
+void asc(int arr[], int n){
+  int i, j, k, tmp;
   for(i = 0; i < n; i++){
-    for(j=0; j < n-i-1; j ++){
+    printf("Proses pengurutan ke-%d \n", i+1);
+    for(j=0; j < n-i-1; j++){
       if(arr[j] > arr[j+1]){
         tmp = arr[j];
         arr[j] = arr[j+1];
         arr[j+1] = tmp;
+        
+        for(k = 0; k < n; k++){
+            printf("%d ", arr[k]);
+        }
+        printf("\n");
+      }
+    }
+  }
+}
+
+void dsc(int arr[], int n){
+  int i, j, k, tmp;
+  for(i = 0; i < n; i++){
+    printf("Proses pengurutan ke-%d \n", i+1);
+    for(j=0; j < n-i-1; j ++){
+      if(arr[j] < arr[j+1]){
+        tmp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = tmp;
+
+        for(k = 0; k < n; k++){
+            printf("%d ", arr[k]);
+        }
+        printf("\n");
       }
     }
   }
@@ -26,9 +51,17 @@ int main() {
     scanf("%d", &array[i]);
   }
 
-  bubbleSort(array, n);
+  asc(array, n);
 
-  printf("Hasil pengurutan sebagai berikut:\n");
+  printf("Hasil pengurutan ascending sebagai berikut:\n");
+  for(i = 0; i < n; i++){
+    printf("%d ", array[i]);
+  }
+  printf("\n\n\n");
+
+  dsc(array, n);
+
+  printf("Hasil pengurutan descending sebagai berikut:\n");
   for(i = 0; i < n; i++){
     printf("%d ", array[i]);
   }
