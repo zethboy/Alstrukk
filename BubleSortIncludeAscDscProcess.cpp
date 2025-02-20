@@ -2,18 +2,18 @@
 
 #include <stdio.h>
 
-void asc(int arr[], int n){
-  int i, j, k, tmp;
-  for(i = 0; i < n; i++){
-    printf("Proses pengurutan ke-%d \n", i+1);
-    for(j=0; j < n-i-1; j++){
+void asc (int arr[], int n){
+  int tmp;
+  for(int i = 0; i < n; i++){
+    printf("perulangan ke : %d", i + 1);
+    for(int j = 0; j < n-i-1; i++){
       if(arr[j] > arr[j+1]){
         tmp = arr[j];
         arr[j] = arr[j+1];
         arr[j+1] = tmp;
-        
-        for(k = 0; k < n; k++){
-            printf("%d ", arr[k]);
+
+        for(int k = 0; k < n; k++){
+          printf("%d ", arr[k]);
         }
         printf("\n");
       }
