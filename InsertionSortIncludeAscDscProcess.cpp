@@ -43,19 +43,28 @@ int main () {
   for(i = 0; i < n; i++){
     scanf("%d", &arr[i]);
   }
+  printf("\n");
+  printf("============================\n");
+  printf("\n");
 
+  printf("ASCENDING\n\n");
+ 
   asc(arr, n);
 
-  printf("hasil pengurutan asc adalah : \n ");
+  printf("hasil pengurutan ascending adalah : \n ");
   for(i = 0; i < n; i++){
     printf("%d ", arr[i]);
   }
+  printf("\n");
+  printf("============================\n");
 
-  printf("\n\n");
+  printf("\n");
+
+  printf("DESCENDING\n\n");
 
   dsc(arr, n);
 
-  printf("hasil pengurutan asc adalah : \n ");
+  printf("hasil pengurutan descanding adalah : \n ");
   for(i = 0; i < n; i++){
     printf("%d ", arr[i]);
   }
