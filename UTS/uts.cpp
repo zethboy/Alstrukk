@@ -1,10 +1,5 @@
 #include <stdio.h>
 
-// YOGI NUGRAHA
-// 247006111067
-// Kelas C
-
-// Fungsi untuk pencarian biner 
 int binarySearch(int arr[], int size, int key) {
     int left = 0, right = size - 1;
     while (left <= right) {
@@ -19,7 +14,7 @@ int binarySearch(int arr[], int size, int key) {
     return -1; 
 }
 
-// Fungsi untuk pencarian sekuensial
+
 int sequentialSearch(int arr[], int size, int key) {
     for (int i = 0; i < size; i++) {
         if (arr[i] == key)
@@ -41,7 +36,7 @@ void bubbleSort(int arr[], int size) {
     }
 }
 
-// Fungsi untuk mencetak array
+
 void printArray(int arr[], int size) {
   for (int i = 0; i < size; i++) {
       printf("%d ", arr[i]);
@@ -52,13 +47,13 @@ void printArray(int arr[], int size) {
 int main() {
     int pilihan, key, size;
 
-    // Input ukuran array
+    
     printf("Masukkan jumlah elemen array: ");
     scanf("%d", &size);
 
     int arr[size];
 
-    // Input elemen array
+  
     printf("Masukkan %d angka: ", size);
     for (int i = 0; i < size; i++) {
         scanf("%d", &arr[i]);
@@ -66,13 +61,13 @@ int main() {
 
     bubbleSort(arr, size);
 
-    // Menampilkan angka yang telah diurutkan
+    
     printf("\nAngka setelah diurutkan: ");
     printArray(arr, size);
 
     printf("\nPilih metode pencarian:\n");
-    printf("1. Pencarian Biner\n");
-    printf("2. Pencarian Sekuensial\n");
+    printf("1. Biner\n");
+    printf("2. Sekuensial\n");
     printf("3. Tidak Ada\n");
     printf("Masukkan pilihan (1/2/3): ");
     scanf("%d", &pilihan);
@@ -88,7 +83,7 @@ int main() {
     int hasil;
 
     if (pilihan == 1) {
-        // Karena binary search membutuhkan array yang terurut, jadi saya urutkan dulu
+        
         bubbleSort(arr, size);
         hasil = binarySearch(arr, size, key);
     } else if (pilihan == 2) {
