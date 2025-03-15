@@ -3,7 +3,7 @@
 
 int menu() {
     int choice;
-    
+    printf("Menu Pilihan Sorting");
     printf("1. Quick Sort\n");
     printf("2. Merge Sort\n");
     printf("3. Bubble Sort\n");
