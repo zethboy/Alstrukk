@@ -6,44 +6,69 @@
 
 int main() {
     char pita[MAX_PITA];
-    int posisi_karakter[26][MAX_PITA]; // Menyimpan posisi huruf a-z
-    int jumlah[26] = {0}; // Menyimpan jumlah kemunculan tiap huruf
+    int posisi_angka[10][MAX_PITA];
+    int posisi_huruf[26][MAX_PITA];
+    int jumlah_angka[10] = {0};
+    int jumlah_huruf[26] = {0};
 
     printf("Masukkan pita karakter (maks 100 karakter, akhiri dengan titik):\n");
     fgets(pita, sizeof(pita), stdin);
 
-    int posisi = 1; // Menghitung semua karakter, termasuk spasi
+    int posisi = 1;
+    int ada_isi = 0;
+
+    // Cek: kalau input cuma titik (tanpa spasi)
+    if ((pita[0] == '.' && (pita[1] == '\n' || pita[1] == '\0'))) {
+        printf("Pita kosong, tidak ada isinya\n");
+        return 0;
+    }
 
     for (int i = 0; pita[i] != '\0'; i++) {
         char c = pita[i];
 
         if (c == '.') {
-            break; // Akhiri di titik
+            break;
         }
 
         if (islower(c)) {
-            int index = c - 'a';
-            posisi_karakter[index][jumlah[index]] = posisi;
-            jumlah[index]++;
+            int idx = c - 'a';
+            posisi_huruf[idx][jumlah_huruf[idx]] = posisi;
+            jumlah_huruf[idx]++;
+            ada_isi = 1;
+        } else if (isdigit(c)) {
+            int idx = c - '0';
+            posisi_angka[idx][jumlah_angka[idx]] = posisi;
+            jumlah_angka[idx]++;
+            ada_isi = 1;
         }
 
-        posisi++; // Hitung SEMUA karakter (termasuk spasi)
+        posisi++;
     }
 
-    int kosong = 1;
-    for (int i = 0; i < 26; i++) {
-        if (jumlah[i] > 0) {
-            kosong = 0;
-            printf("%c :\n", i + 'a');
-            for (int j = 0; j < jumlah[i]; j++) {
-                printf(" %d\n", posisi_karakter[i][j]);
+    if (!ada_isi) {
+        return 0; // tidak print apa-apa
+    }
+
+    // Cetak angka
+    for (int i = 0; i < 10; i++) {
+        if (jumlah_angka[i] > 0) {
+            printf("%d :\n", i);
+            for (int j = 0; j < jumlah_angka[i]; j++) {
+                printf(" %d\n", posisi_angka[i][j]);
             }
-            printf("Muncul %d kali\n", jumlah[i]);
+            printf("Muncul %d kali\n", jumlah_angka[i]);
         }
     }
 
-    if (kosong) {
-        printf("Pita kosong, tidak ada isinya\n");
+    // Cetak huruf
+    for (int i = 0; i < 26; i++) {
+        if (jumlah_huruf[i] > 0) {
+            printf("%c :\n", i + 'a');
+            for (int j = 0; j < jumlah_huruf[i]; j++) {
+                printf(" %d\n", posisi_huruf[i][j]);
+            }
+            printf("Muncul %d kali\n", jumlah_huruf[i]);
+        }
     }
 
     return 0;
