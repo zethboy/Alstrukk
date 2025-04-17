@@ -17,7 +17,7 @@ int main() {
     int posisi = 1;
     int ada_isi = 0;
 
-    // Cek: kalau input cuma titik (tanpa spasi)
+    // Cek: kalau input cuma titik
     if ((pita[0] == '.' && (pita[1] == '\n' || pita[1] == '\0'))) {
         printf("Pita kosong, tidak ada isinya\n");
         return 0;
