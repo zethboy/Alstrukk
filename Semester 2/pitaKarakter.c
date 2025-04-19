@@ -46,10 +46,10 @@ int main() {
     }
 
     if (!ada_isi) {
-        return 0; // tidak print apa-apa
+        return 0; 
     }
 
-    // Cetak angka
+    
     for (int i = 0; i < 10; i++) {
         if (jumlah_angka[i] > 0) {
             printf("%d :\n", i);
