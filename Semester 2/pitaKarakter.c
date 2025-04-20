@@ -60,7 +60,7 @@ int main() {
         }
     }
 
-    // Cetak huruf
+    
     for (int i = 0; i < 26; i++) {
         if (jumlah_huruf[i] > 0) {
             printf("%c :\n", i + 'a');
