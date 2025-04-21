@@ -29,7 +29,7 @@ int main() {
 
   asc(array, n);
 
-  printf("Hasil pengurutan ascending sebagai berikut:\n");
+  printf("Hasil pengurutan ascending:\n");
   for(int i = 0; i < n; i++){
     printf("%c ", array[i]);
   }
